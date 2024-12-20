@@ -1,0 +1,345 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #f1f8ff;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table td {
+    vertical-align: middle;
+    text-align: right;
+}
+
+.table td:first-child,
+.table td:last-child {
+    text-align: left;
+}
+
+.table td:nth-last-child(2) {
+    text-align: center;
+}
+
+#totalRow {
+    border-top: 2px solid #dee2e6;
+}
+
+#totalRow td {
+    font-weight: bold;
+}
+
+.profit {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.loss {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #0366d6;
+    border-color: #0366d6;
+}
+
+.btn-primary:hover {
+    background-color: #0255b3;
+    border-color: #0255b3;
+}
+
+.form-control:focus {
+    border-color: #0366d6;
+    box-shadow: 0 0 0 0.2rem rgba(3, 102, 214, 0.25);
+}
+
+/* Symbol suggestions styling */
+.symbol-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: #f8f9fa;
+}
+
+.suggestion-item strong {
+    color: #0d6efd;
+}
+
+.suggestion-item .text-muted {
+    font-size: 0.875em;
+}
+
+/* Stock status indicators */
+.stock-status {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.stock-status.up {
+    background-color: #28a745;
+    box-shadow: 0 0 5px #28a745;
+    animation: pulse-green 2s infinite;
+}
+
+.stock-status.down {
+    background-color: #dc3545;
+    box-shadow: 0 0 5px #dc3545;
+    animation: pulse-red 2s infinite;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.status-up {
+    background-color: #28a745;
+    box-shadow: 0 0 5px #28a745;
+}
+
+.status-down {
+    background-color: #dc3545;
+    box-shadow: 0 0 5px #dc3545;
+}
+
+.status-neutral {
+    background-color: #6c757d;
+}
+
+.price-up {
+    color: #28a745;
+    animation: fadeIn 0.5s;
+}
+
+.price-down {
+    color: #dc3545;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 5px rgba(40, 167, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+}
+
+@keyframes pulse-red {
+    0% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 5px rgba(220, 53, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* Date input styling */
+input[type="date"] {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    padding: 0.375rem 0.75rem;
+}
+
+input[type="date"]:invalid {
+    border-color: #dc3545;
+}
+
+input[type="date"]:invalid + .invalid-feedback {
+    display: block;
+}
+
+/* Stock price animation */
+.price-flash-up {
+    animation: flashGreen 1s;
+}
+
+.price-flash-down {
+    animation: flashRed 1s;
+}
+
+@keyframes flashGreen {
+    0% { background-color: rgba(40, 167, 69, 0.2); }
+    100% { background-color: transparent; }
+}
+
+@keyframes flashRed {
+    0% { background-color: rgba(220, 53, 69, 0.2); }
+    100% { background-color: transparent; }
+}
+
+/* Alert styling */
+#alerts {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+    max-width: 350px;
+}
+
+.alert {
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Sell button */
+.btn-sell {
+    padding: 2px 8px;
+    font-size: 0.875rem;
+}
+
+/* Sold shares table */
+#soldSharesTableBody tr {
+    background-color: #f8f9fa;
+}
+
+/* Yahoo Finance style symbol search */
+.symbol-search-container {
+    position: relative;
+    width: 100%;
+}
+
+.symbol-search-input {
+    padding-right: 30px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.symbol-search-input:focus {
+    border-color: #188fff;
+    box-shadow: 0 0 0 3px rgba(24,143,255,0.1);
+}
+
+.symbol-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.suggestion-item:hover {
+    background-color: #f5f8fa;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-symbol {
+    font-weight: 600;
+    color: #000;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.suggestion-name {
+    color: #595959;
+    font-size: 14px;
+}
+
+.suggestion-exchange {
+    float: right;
+    color: #999;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.loading-indicator {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #188fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+.symbol-search-input.loading + .loading-indicator {
+    display: block;
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* No results state */
+.no-results {
+    padding: 16px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+/* Error state */
+.search-error {
+    padding: 16px;
+    text-align: center;
+    color: #ff4444;
+    font-size: 14px;
+}
